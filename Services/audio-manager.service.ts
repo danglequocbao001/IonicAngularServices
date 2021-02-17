@@ -29,7 +29,7 @@ export class AudioManagerService {
 
     getAudioMode() {
         this.audioman.getAudioMode().then((value: AudioManagement.AudioModeReturn) => {
-            // console.log('Device audio mode is ' + value.label + ' (' + value.audioMode + ')');
+            console.log('Device audio mode is ' + value.label + ' (' + value.audioMode + ')');
             alert('Device audio mode is ' + value.label + ' (' + value.audioMode + ')')
         })
         .catch((reason) => {
