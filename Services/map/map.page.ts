@@ -73,7 +73,7 @@ export class MapPage implements OnInit {
     addCurrenMarker() {
         let currentMarker = new google.maps.Marker({
             position: new google.maps.LatLng(this.center.lat, this.center.lng),
-            label: 'Vị trí của bạn, kéo thả để thay đổi',
+            label: 'Change your location',
             icon: 'http://maps.google.com/mapfiles/ms/icons/blue-dot.png',
             draggable: true,
         });
