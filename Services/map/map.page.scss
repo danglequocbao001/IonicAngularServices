@@ -1,0 +1,50 @@
+.header {
+    justify-content: center;
+    align-items: center;
+    color: #424242;
+    font-size: 20px;
+    font-weight: 500;
+    position: relative;
+    border-bottom: 1px solid #C8C8C8;
+    height: 50px;
+
+    ion-icon {
+        position: absolute;
+        top: 50%;
+        right: 15px;
+        transform: translateY(-50%);
+        color: #C8C8C8;
+        transition: .15s;
+        font-size: 24px;
+
+        &:active {
+            transform: translateY(-50%) scale(.95);
+        }
+    }
+}
+
+#map {
+    height: 100%;
+}
+
+//css class custom for map page go here
+// .google-map-modal {
+//     --height: 90%;
+
+//     sc-ion-modal-ios {
+//         display: none;
+//     }
+
+//     .modal-wrapper {
+//         position: absolute;
+//         bottom: 0;
+//         left: 0;
+//         right: 0;
+//         border-top-left-radius: 15px;
+//         border-top-right-radius: 15px;
+
+//         .ion-page {
+//             justify-content: flex-start;
+//         }
+//     }
+// }

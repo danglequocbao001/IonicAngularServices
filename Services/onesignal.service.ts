@@ -14,23 +14,27 @@ export class OneSignalService {
     //Only use this method, should be placed in Oninit or IonviewwillEnter
     startOneSignal() {
         this.PlatForm.ready().then(() => {
-            this.oneSignal.startInit("17a2acbf-854f-4011-97b8-43f2640b7312", "292455090753"); //key and sender id from google firebase app account, can change later
+            //Search key and sender id, or read doccument on ionic onesignal for more infomation
+            this.oneSignal.startInit("Your key go here, it look like a long text and number merged, with some '-' between them", "Your sender id go here, it is a string just number"); 
             this.oneSignal.inFocusDisplaying(this.oneSignal.OSInFocusDisplayOption.None);
 
             this.oneSignal.handleNotificationReceived().subscribe(data => {
                 let message = data.payload.body;
                 let title = data.payload.title;
+                console.log(title,'   ',message)
                 this.showNotification(title, message);
             });
             this.oneSignal.handleNotificationOpened().subscribe(data => {
                 let message = data.notification.payload.body;
                 let title = data.notification.payload.title;
+                console.log(title,'   ',message)
                 this.showNotification(title, message);
             });
             this.oneSignal.endInit();
         })
     }
 
+    //use aleart or anything would display the notyfy from onesignal push
     showNotification(title, message) {
         this.alert.create({
             mode: 'ios',

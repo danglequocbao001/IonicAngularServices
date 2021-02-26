@@ -5,7 +5,7 @@ import { Platform } from '@ionic/angular';
 @Injectable()
 export class SpeechRecognitionService {
 
-    public voiceResult = '';
+    public voiceResult:string;
 
     constructor(
         public speechRecognition: SpeechRecognition,
@@ -14,18 +14,20 @@ export class SpeechRecognitionService {
 
     checkPermission() {
         this.PlatForm.ready().then(() => {
-            // this.speechRecognition.hasPermission().then((hadPermission: boolean) => {
-            //     if(hadPermission) {
-                    
-            //     }
-            // });
-            this.speechRecognition.requestPermission().then(
-                () => {
-                    // console.log('Granted');
+            this.speechRecognition.hasPermission().then((hadPermission: boolean) => {
+                if(hadPermission) {
                     this.startVoiceRecord();
-                },
-                () => console.log('Denied')
-            )
+                }
+                else {
+                    this.speechRecognition.requestPermission().then(
+                        () => {
+                            console.log('Accepted');
+                            this.startVoiceRecord();
+                        },
+                        () => console.error('Denied')
+                    )
+                }
+            });
         })
     }
 
