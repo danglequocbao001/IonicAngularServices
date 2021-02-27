@@ -10,7 +10,7 @@ interface Location {
 }
 
 //install: npm install --save-dev @type/googlemaps
-//in your tsconfig.spec.json and tsconfig.app.json declear "googlamaps" in array type like: "type": ["...","googlemaps","..."]
+//in your tsconfig.spec.json and tsconfig.app.json declear "googlemaps" in array type like: "type": ["...","googlemaps","..."]
 //if you can't delear it or just don't want then import it like: import {} form 'googlemaps'
 @Injectable()
 
